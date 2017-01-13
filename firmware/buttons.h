@@ -20,7 +20,7 @@ typedef struct
 } button;
 
 #define BUTTON_STRUCT_SIZE				(sizeof(button) / sizeof(int))
-#deinfe	BUTTON_STRUCT_SIZE_IN_BYTES		(sizeof(button) / sizeof(char))
+#define	BUTTON_STRUCT_SIZE_IN_BYTES		(sizeof(button) / sizeof(char))
 
 int buttons_init (void);
 int buttons_task (void);
