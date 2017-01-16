@@ -23,7 +23,7 @@ int button_read (button *b, button_id id)
 		b->time = button2_time;
 	}
 	
-	return b;
+	return 0;
 }
 
 int buttons_init (void)
@@ -36,8 +36,8 @@ int buttons_init (void)
 	button2_value = 0;
 	button2_time = 0;
 	
-	button1_timer.start();
-	button2_timer.start();
+	button1_timer.start(&button1_timer);
+	button2_timer.start(&button2_timer);
 }
 
 button_value my_pio_read (button_id id)
@@ -69,8 +69,8 @@ int buttons_task (void)
 	else button1_value = BUTTON_NOT_PRESSED;
 
 	/* Tempo no qual o botao esta no valor */
-	if (button1_value != old_button1_value) button1_timer.reset();
-	button1_time = button1_timer.get_value();
+	if (button1_value != old_button1_value) button1_timer.reset(&button1_timer);
+	button1_time = button1_timer.get_value(&button1_timer);
 	
 	/* Botao 2 */
 	/* Debounce do botao */
@@ -90,8 +90,8 @@ int buttons_task (void)
 	else button2_value = BUTTON_NOT_PRESSED;
 
 	/* Tempo no qual o botao esta no valor */
-	if (button2_value != old_button2_value) button2_timer.reset();
-	button2_time = button2_timer.get_value();
+	if (button2_value != old_button2_value) button2_timer.reset(&button2_timer);
+	button2_time = button2_timer.get_value(&button2_timer);
 
 	return 0;
 }
