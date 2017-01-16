@@ -11,7 +11,7 @@ struct timer
 
 	int (*start) (timer *);
 	int (*stop) (timer *);
-	int (*reset) (timer *)
+	int (*reset) (timer *);
 	int (*get_value) (timer *);
 };
 
