@@ -158,7 +158,7 @@ int m_state_task (void)
 				{
 					alarm_on ^= 1;
 					
-					// ligar o led indicativo de alarme
+					// FIXME implementar led indicativo de alarme ativo e depois liga-lo
 				}
 				/* Botao 2 pressionado por MAIS de TIME_TO_ENTER_IN_SETTING_MODE ms --> mudar para o estado de ajuste das horas do alarme */
 				else
