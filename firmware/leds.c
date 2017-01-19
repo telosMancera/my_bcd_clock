@@ -5,6 +5,8 @@ led led_list[NUMBER_OF_LEDS];
 
 int leds_init (void)
 {
+	int i;
+	
 	// FIXME Inicializar os pinos aqui
 	
 	HOUR_TENS_BIT_1_LED.state = LED_OFF;
@@ -136,8 +138,59 @@ int leds_init (void)
 	return 0;
 }
 
+int my_pio_set (int port, int pin)
+{
+	return 0;
+}
+
+int my_pio_clear (int port, int pin)
+{
+	return 0;
+}
+
 int leds_task (void)
 {
+	static int led_list_ptr = HOUR_TENS_BIT_1_LED;
+	led current_led, previous_led;	
+	
+	switch (led_list_ptr)
+	{
+		case FIRST_TIME_LED :
+		{
+			current_led = led_list[FIRST_TIME_LED];
+			previous_led = led_list[LAST_TIME_LED];
+			
+			led_list_ptr++;
+			
+			break;
+		}
+		case LAST_TIME_LED :
+		{
+			current_led = led_list[LAST_TIME_LED];
+			previous_led = led_list[LAST_TIME_LED - 1];
+			
+			led_list_ptr = FIRST_TIME_LED;
+			
+			break;
+		}
+		default :
+		{
+			current_led = led_list[led_list_ptr];
+			previous_led = led_list[led_list_ptr - 1];
+			
+			led_list_ptr++;
+			
+			break;
+		}
+	}
+	
+	my_pio_clear(previous_led.anode[0], previous_led.anode[1]);
+	
+	if (led_list[current_led].state == LED_ON)
+	{
+		my_pio_set(current_led.anode[0], current_led.anode[1]);
+	}
+	
 	return 0;
 }
 

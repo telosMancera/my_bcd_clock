@@ -50,7 +50,17 @@ ProductVersion=1.0.0.0
 AutoIncBuildNr=0
 SyncProduct=1
 
-[Unit7]
+[Unit4]
+FileName=timer.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit5]
 FileName=utils.c
 CompileCpp=0
 Folder=
@@ -60,7 +70,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit8]
+[Unit9]
 FileName=utils.h
 CompileCpp=0
 Folder=
@@ -81,7 +91,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=main.c
+FileName=leds.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -91,27 +101,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=timer.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit4]
-FileName=buttons.h
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit5]
-FileName=leds.h
+FileName=main.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -121,7 +111,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit6]
-FileName=timer.h
+FileName=buttons.h
 CompileCpp=0
 Folder=
 Compile=1
@@ -130,8 +120,18 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit9]
-FileName=..\..\..\my_bcd_clock\firmware\leds.c
+[Unit7]
+FileName=leds.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit8]
+FileName=timer.h
 CompileCpp=0
 Folder=
 Compile=1
