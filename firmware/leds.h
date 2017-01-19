@@ -41,7 +41,7 @@ typedef enum
 	LED_OFF
 } led_state;
 
-/* FIXME Depois trocar os valores para oa valores reais dos pinos */
+/* FIXME Depois trocar os valores para os valores reais dos pinos */
 #define	LED_LINE_0_PORT		0
 #define	LED_LINE_1_PORT		1
 #define	LED_LINE_2_PORT		2
@@ -56,8 +56,8 @@ typedef enum
 typedef struct
 {
 	led_state state;
-	int anode_pin[2];
-	int cathode_pin[2];
+	int anode[2];
+	int cathode[2];
 } led;
 
 int leds_init (void);
