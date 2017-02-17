@@ -9,8 +9,7 @@ For example: in firmware i am using things i learned like structs, pointers, poi
 For now, the repository is divided in two directories: "hardware" and "firmware".
 
 ### ./hardware
-No files until now. My intention is to use a free-software to pcb drawning.
+This folder contains the all files about hardware, like schematics, datasheets, etc
 
 ### ./firmware
-Currently i am writing the firmware on DevC++, because i haven't decided which uC i will use. Maybe it will be ATmega from Arduino Uno.
-Actually i will use the arduino uno as prototype.
+This folder contains all files about firmware, like source files, documents, project files, etc
